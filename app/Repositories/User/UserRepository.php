@@ -16,6 +16,12 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
     public function getAllUsers()
     {
-        return User::all();
+        return $this->model::all();
+    }
+
+    public function create($input)
+    {
+        $input['password'] = bcrypt($input['password']);
+        return $this->model::create($input);
     }
 }

@@ -17,7 +17,8 @@ Route::group([
     'module' => 'Api',
     'prefix' => 'api',
     'namespace' => $namespace,
-    'middleware' => ['jwt', 'language'],
+    'middleware' => ['jwt', 'language', 'admin'],
 ], function () {
     Route::get('users', 'UserController@index');
+    Route::post('users', 'UserController@store');
 });
