@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('language')->default('vi');
+            $table->string('type')->default(0);
             $table->timestamps();
         });
     }
